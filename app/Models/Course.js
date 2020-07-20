@@ -11,8 +11,14 @@ class Course extends Model {
         return ['created_at','updated_at']
     }
 
-    teachers (){
+    teacher (){
         return this.belongsTo('App/Models/Teacher')
+    }
+    theme () {
+        return this.hasMany('App/Models/Theme')
+    }
+    faq () {
+        return this.hasMany('App/Models/Faq')
     }
 }
 

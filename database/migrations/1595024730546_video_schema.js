@@ -9,7 +9,7 @@ class VideoSchema extends Schema {
       table.increments()
       table.string('title', 100)
       table.time('duration')
-      table.string('video', 40)
+      table.string('video', 120)
       table.integer('theme_id').unsigned().references('id').inTable('themes')
       table.timestamps()
     })

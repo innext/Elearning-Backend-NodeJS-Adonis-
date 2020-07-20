@@ -7,7 +7,7 @@ class CourseController {
   async index ({ auth, response }) {
     try{
       const teacher = await auth.getUser()
-      return await teacher.courses().fetch()
+      return await teacher.course().fetch()
     } catch (error) {
       response.send('Missing or invalid jwt token')
     }
@@ -46,7 +46,7 @@ class CourseController {
         category_id
       })
 
-      await teacher.courses().save(course)
+      await teacher.course().save(course)
 
       return response.json({
         rer: true,

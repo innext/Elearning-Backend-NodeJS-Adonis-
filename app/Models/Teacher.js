@@ -24,7 +24,7 @@ class Teacher extends Model {
           }
         })
       }
-    courses () {
+    course () {
       return this.hasMany('App/Models/Course')
     }
 }
