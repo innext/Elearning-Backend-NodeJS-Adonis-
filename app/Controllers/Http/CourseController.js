@@ -5,12 +5,7 @@ const AuthorizationService = use('App/Services/AuthorizationService')
 
 class CourseController {
   async index ({ auth, response }) {
-    try{
-      const teacher = await auth.getUser()
-      return await teacher.course().fetch()
-    } catch (error) {
-      response.send('Missing or invalid jwt token')
-    }
+      return await Course.all()
   }
 
   async store ({ request, response, auth }) {
@@ -61,7 +56,7 @@ class CourseController {
   }
 
   async show ({ params }) {
-    return await Course.findBy('name',params.id)
+    return await Course.find(params.id)
   }
 
   async update ({ params, request, response, auth }) {
